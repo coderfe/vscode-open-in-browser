@@ -5,7 +5,7 @@ function activate (context) {
   const disposable = vscode.commands.registerCommand('extension.openWith', function () {
     let editor = vscode.window.activeTextEditor
     let doc = editor.document
-    vscode.window.showQuickPick(['chrome', 'firefox'], { placeHolder: 'Which app?' }).then((val) => {
+    vscode.window.showQuickPick(['chrome', 'firefox'], { placeHolder: 'Which browser?' }).then((val) => {
       if (val) {
         opn(doc.fileName, { app: val })
       } else {

@@ -2,7 +2,7 @@
     "name": "open-html-in-browser",
     "displayName": "open-in-browser",
     "description": "Open html file in default browser",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "coderfee",
     "engines": {
         "vscode": "^1.5.0"
@@ -26,7 +26,7 @@
                 "title": "Open with"
             }
         ],
-        "keybindings":[
+        "keybindings": [
             {
                 "command": "extension.openWith",
                 "key": "ctrl+alt+o",
