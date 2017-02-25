@@ -51,5 +51,6 @@
     },
     "dependencies": {
         "opn": "^4.0.2"
-    }
+    },
+    "homepage": "https://github.com/coderfe/vscode-open-inbrowser"
 }
