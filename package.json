@@ -1,0 +1,55 @@
+{
+    "name": "open-html-in-browser",
+    "displayName": "open-in-browser",
+    "description": "Open html file in default browser",
+    "version": "0.0.1",
+    "publisher": "coderfee",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "open",
+        "browser",
+        "html"
+    ],
+    "activationEvents": [
+        "onCommand:extension.openWith"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.openWith",
+                "title": "Open with"
+            }
+        ],
+        "keybindings":[
+            {
+                "command": "extension.openWith",
+                "key": "ctrl+alt+o",
+                "win": "ctrl+alt+o",
+                "linux": "ctrl+alt+o",
+                "mac": "cmd+option+o",
+                "when": "editorTextFocus && editorLangId == html"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.32",
+        "@types/node": "^6.0.40",
+        "eslint": "^3.6.0",
+        "mocha": "^2.3.3",
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0"
+    },
+    "dependencies": {
+        "opn": "^4.0.2"
+    }
+}
