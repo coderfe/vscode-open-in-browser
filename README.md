@@ -1,16 +1,19 @@
-# open-in-browser
+# Preview HTML file in browser
 
 ![installs](http://vsmarketplacebadge.apphb.com/installs/coderfee.open-html-in-browser.svg)
 
-Open **html** file in your browser, **firefox** & **google chrome** & **IE**.
+Preview **html** file in your browser, **firefox** & **google chrome** & **IE**.
 
 ## Usage
 
-Open an html file, Windows and Linux keyboard shortcut is `ctrl+alt+o`, for MacOS is `cmd+opt+o`.
+Open an html file, Windows and Linux keyboard shortcut is <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd>, for MacOS is <kbd>Cmd</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd>.
 
 ![vscode/open-in-browser.gif](http://oaz5uxplb.bkt.clouddn.com/vscode/open-in-browser.gif)
 
 ## Release Notes
+
+### 0.0.4
+- fix can't open html file in chrome on Linux
 
 ### 0.0.3
 

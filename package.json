@@ -1,8 +1,8 @@
 {
     "name": "open-html-in-browser",
     "displayName": "open-in-browser",
-    "description": "Open html file in default browser",
-    "version": "0.0.3",
+    "description": "Preview HTML file in browser",
+    "version": "0.0.4",
     "publisher": "coderfee",
     "engines": {
         "vscode": "^1.5.0"
@@ -13,7 +13,8 @@
     "keywords": [
         "open",
         "browser",
-        "html"
+        "html",
+        "preview html"
     ],
     "activationEvents": [
         "onCommand:extension.openWith"
@@ -23,7 +24,7 @@
         "commands": [
             {
                 "command": "extension.openWith",
-                "title": "Open with"
+                "title": "Open With"
             }
         ],
         "keybindings": [
