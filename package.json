@@ -4,6 +4,7 @@
     "description": "Preview HTML file in browser",
     "version": "0.0.4",
     "publisher": "coderfee",
+    "icon": "image/preview-html.svg",
     "engines": {
         "vscode": "^1.5.0"
     },
