@@ -7,9 +7,11 @@ function activate (context) {
     let editor = vscode.window.activeTextEditor
     let doc = editor.document
     let quickPick
-    if (platform === 'win32') {
+    if (platform === 'win32') {  // Windows
       quickPick = ['chrome', 'firefox', 'iexplore']
-    } else {
+    } else if (platform === 'darwin') {  // OS X
+      quickPick = ['google chrome', 'firefox']
+    } else {  // Linux
       quickPick = ['google-chrome', 'firefox']
     }
     vscode.window.showQuickPick(quickPick, { placeHolder: 'Which browser?' }).then((val) => {
