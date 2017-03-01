@@ -12,6 +12,9 @@ Open an html file, Windows and Linux keyboard shortcut is <kbd>Ctrl</kbd>+<kbd>A
 
 ## Release Notes
 
+### 0.0.5
+- fix can't open html file in chrome on OS X
+
 ### 0.0.4
 - fix can't open html file in chrome on Linux
 
