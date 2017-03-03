@@ -3,9 +3,9 @@ const opn = require('opn')
 const platform = require('os').platform()
 
 function activate (context) {
+  let editor = vscode.window.activeTextEditor
+  let doc = editor.document
   const disposable = vscode.commands.registerCommand('extension.openWith', function () {
-    let editor = vscode.window.activeTextEditor
-    let doc = editor.document
     let quickPick
     if (platform === 'win32') {  // Windows
       quickPick = ['chrome', 'firefox', 'iexplore']
@@ -23,6 +23,11 @@ function activate (context) {
     })
   })
   context.subscriptions.push(disposable)
+
+  const disposableDefault = vscode.commands.registerCommand('extension.openWithDefault', () => {
+    opn(doc.fileName)
+  })
+  context.subscriptions.push(disposableDefault)
 }
 exports.activate = activate
 

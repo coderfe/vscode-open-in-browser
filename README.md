@@ -12,23 +12,7 @@ Open an html file, Windows and Linux keyboard shortcut is <kbd>Ctrl</kbd>+<kbd>A
 
 ## Release Notes
 
-### 0.0.5
-- fix can't open html file in chrome on OS X
-
-### 0.0.4
-- fix can't open html file in chrome on Linux
-
-### 0.0.3
-
-- support IE
-
-### 0.0.2
-
-- fix some error
-
-### 0.0.1
-
-- Open html file in browser, support firefox and chrome.
+[ChangeLog](https://github.com/coderfe/vscode-open-in-browser/blob/master/CHANGELOG.md)
 
 ## Related
 

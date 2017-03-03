@@ -18,7 +18,8 @@
         "preview html"
     ],
     "activationEvents": [
-        "onCommand:extension.openWith"
+        "onCommand:extension.openWith",
+        "onCommand:extension.openWithDefault"
     ],
     "main": "./extension",
     "contributes": {
@@ -26,6 +27,10 @@
             {
                 "command": "extension.openWith",
                 "title": "Open With"
+            },
+            {
+                "command": "extension.openWithDefault",
+                "title": "Open With Default Browser"
             }
         ],
         "keybindings": [
@@ -35,6 +40,14 @@
                 "win": "ctrl+alt+o",
                 "linux": "ctrl+alt+o",
                 "mac": "cmd+option+o",
+                "when": "editorTextFocus && editorLangId == html"
+            },
+            {
+                "command": "extension.openWithDefault",
+                "key": "ctrl+alt+d",
+                "win": "ctrl+alt+d",
+                "linux": "ctrl+alt+d",
+                "mac": "cmd+option+d",
                 "when": "editorTextFocus && editorLangId == html"
             }
         ]
