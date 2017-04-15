@@ -12,7 +12,7 @@ function activate (context) {
     } else if (platform === 'darwin') {  // OS X
       quickPick = ['google chrome', 'firefox']
     } else {  // Linux
-      quickPick = ['google-chrome', 'firefox']
+      quickPick = ['chromium-browser', 'google-chrome', 'firefox']
     }
     vscode.window.showQuickPick(quickPick, { placeHolder: 'Which browser?' }).then((val) => {
       if (val) {
