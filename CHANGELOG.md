@@ -1,3 +1,7 @@
+### 0.0.7
+
+- Chromium browser support (ubuntu), [@wilsoft-gt](https://github.com/wilsoft-gt)
+
 ### 0.0.6
 - support preview html in your default browser, keyboard shortcut is <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd>
 
