@@ -65,7 +65,8 @@
         "vscode": "^1.0.0"
     },
     "dependencies": {
-        "opn": "^4.0.2"
+        "opn": "^4.0.2",
+        "default-browser-id": "^1.0.4"
     },
     "homepage": "https://github.com/coderfe/vscode-open-inbrowser"
 }

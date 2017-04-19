@@ -1,6 +1,7 @@
 const vscode = require('vscode')
 const opn = require('opn')
 const platform = require('os').platform()
+const defaultBrowser = require('./x-default-browser/x-default-browser')
 
 function activate (context) {
   let editor = vscode.window.activeTextEditor
@@ -25,7 +26,14 @@ function activate (context) {
   context.subscriptions.push(disposable)
 
   const disposableDefault = vscode.commands.registerCommand('extension.openWithDefault', () => {
-    opn(doc.fileName)
+
+    defaultBrowser(function (error, result){
+      if(!error)
+        opn(doc.fileName, { app: result.commonName })
+      else
+        opn(doc.fileName)
+    })  
+    
   })
   context.subscriptions.push(disposableDefault)
 }
