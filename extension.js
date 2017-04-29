@@ -1,7 +1,7 @@
 const vscode = require('vscode')
 const opn = require('opn')
 const platform = require('os').platform()
-const defaultBrowser = require('./x-default-browser/x-default-browser')
+const defaultBrowser = require('x-default-browser')
 
 function activate (context) {
   let editor = vscode.window.activeTextEditor

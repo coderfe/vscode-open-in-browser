@@ -1,72 +1,72 @@
 {
-    "name": "open-html-in-browser",
-    "displayName": "open-in-browser",
-    "description": "Preview HTML file in browser",
-    "version": "0.0.7",
-    "publisher": "coderfee",
-    "icon": "image/preview-html.svg",
-    "engines": {
-        "vscode": "^1.5.0"
-    },
-    "categories": [
-        "Other"
+  "name": "open-html-in-browser",
+  "displayName": "open-in-browser",
+  "description": "Preview HTML file in browser",
+  "version": "0.0.7",
+  "publisher": "coderfee",
+  "icon": "image/preview-html.svg",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "open",
+    "browser",
+    "html",
+    "preview html"
+  ],
+  "activationEvents": [
+    "onCommand:extension.openWith",
+    "onCommand:extension.openWithDefault"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.openWith",
+        "title": "Open With"
+      },
+      {
+        "command": "extension.openWithDefault",
+        "title": "Open With Default Browser"
+      }
     ],
-    "keywords": [
-        "open",
-        "browser",
-        "html",
-        "preview html"
-    ],
-    "activationEvents": [
-        "onCommand:extension.openWith",
-        "onCommand:extension.openWithDefault"
-    ],
-    "main": "./extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.openWith",
-                "title": "Open With"
-            },
-            {
-                "command": "extension.openWithDefault",
-                "title": "Open With Default Browser"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "extension.openWith",
-                "key": "ctrl+alt+o",
-                "win": "ctrl+alt+o",
-                "linux": "ctrl+alt+o",
-                "mac": "cmd+option+o",
-                "when": "editorTextFocus && editorLangId == html"
-            },
-            {
-                "command": "extension.openWithDefault",
-                "key": "ctrl+alt+d",
-                "win": "ctrl+alt+d",
-                "linux": "ctrl+alt+d",
-                "mac": "cmd+option+d",
-                "when": "editorTextFocus && editorLangId == html"
-            }
-        ]
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "@types/mocha": "^2.2.32",
-        "@types/node": "^6.0.40",
-        "eslint": "^3.6.0",
-        "mocha": "^2.3.3",
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0"
-    },
-    "dependencies": {
-        "opn": "^4.0.2",
-        "default-browser-id": "^1.0.4"
-    },
-    "homepage": "https://github.com/coderfe/vscode-open-inbrowser"
+    "keybindings": [
+      {
+        "command": "extension.openWith",
+        "key": "ctrl+alt+o",
+        "win": "ctrl+alt+o",
+        "linux": "ctrl+alt+o",
+        "mac": "cmd+option+o",
+        "when": "editorTextFocus && editorLangId == html"
+      },
+      {
+        "command": "extension.openWithDefault",
+        "key": "ctrl+alt+d",
+        "win": "ctrl+alt+d",
+        "linux": "ctrl+alt+d",
+        "mac": "cmd+option+d",
+        "when": "editorTextFocus && editorLangId == html"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.40",
+    "eslint": "^3.6.0",
+    "mocha": "^2.3.3",
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0"
+  },
+  "dependencies": {
+    "opn": "^4.0.2",
+    "x-default-browser": "^0.4.0"
+  },
+  "homepage": "https://github.com/coderfe/vscode-open-inbrowser"
 }
