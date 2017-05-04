@@ -1,3 +1,7 @@
+### 0.0.8
+
+- Open html file in default browser, not default app. Thanks to [@narekmal](https://github.com/narekmal)
+
 ### 0.0.7
 
 - Chromium browser support (ubuntu), [@wilsoft-gt](https://github.com/wilsoft-gt)
