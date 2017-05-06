@@ -3,10 +3,10 @@ const opn = require('opn')
 const platform = require('os').platform()
 const defaultBrowser = require('x-default-browser')
 
-let winChrome = 'chrome'
-let osxChrome = 'google chrome'
-let linuxChrome = 'google-chrome'
-let linuxChromium = 'chromium-browser'
+const WIN_CHROME = 'chrome'
+const OSX_CHROME = 'google chrome'
+const LINUX_CHROME = 'google-chrome'
+const LINUX_CHROMIUM = 'chromium-browser'
 
 function activate (context) {
   let editor = vscode.window.activeTextEditor
@@ -14,14 +14,15 @@ function activate (context) {
   const disposable = vscode.commands.registerCommand('extension.openWith', function () {
     let quickPick
     if (platform === 'win32') {  // Windows
-      quickPick = [winChrome, 'firefox', 'iexplore']
+      quickPick = [WIN_CHROME, 'firefox', 'iexplore']
     } else if (platform === 'darwin') {  // OS X
-      quickPick = [osxChrome, 'firefox']
+      quickPick = [OSX_CHROME, 'firefox']
     } else {  // Linux
-      quickPick = ['chromium-browser', linuxChrome, 'firefox']
+      quickPick = ['chromium-browser', LINUX_CHROME, 'firefox']
     }
     vscode.window.showQuickPick(quickPick, { placeHolder: 'Which browser?' }).then((val) => {
       if (val) {
+        doc.save()
         opn(doc.fileName, { app: val })
       } else {
         return
@@ -37,15 +38,16 @@ function activate (context) {
         let appName = null;
         if (result.commonName === 'chrome') {
           if (platform === 'win32') {
-            appName = winChrome
+            appName = WIN_CHROME
           } else if (platform === 'darwin') {
-            appName = osxChrome
+            appName = OSX_CHROME
           } else {
-            appName = linuxChrome
+            appName = LINUX_CHROME
           }
         } else if (result.commonName === 'chromium') {
-          appName = linuxChromium
+          appName = LINUX_CHROMIUM
         }
+        doc.save();
         opn(doc.fileName, { app: appName })
       }
       else
