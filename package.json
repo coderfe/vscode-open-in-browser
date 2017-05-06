@@ -2,7 +2,7 @@
     "name": "open-html-in-browser",
     "displayName": "open-in-browser",
     "description": "Preview HTML file in browser",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "publisher": "coderfee",
     "icon": "image/preview-html.svg",
     "engines": {
@@ -44,10 +44,10 @@
             },
             {
                 "command": "extension.openWithDefault",
-                "key": "ctrl+alt+d",
-                "win": "ctrl+alt+d",
-                "linux": "ctrl+alt+d",
-                "mac": "cmd+option+d",
+                "key": "ctrl+k d",
+                "win": "ctrl+k d",
+                "linux": "ctrl+k d",
+                "mac": "cmd+k d",
                 "when": "editorTextFocus && editorLangId == html"
             }
         ]
