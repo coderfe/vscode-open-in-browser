@@ -3,10 +3,10 @@ const opn = require('opn')
 const platform = require('os').platform()
 const defaultBrowser = require('x-default-browser')
 
-let winChrome = 'chrome'
-let osxChrome = 'google chrome'
-let linuxChrome = 'google-chrome'
-let linuxChromium = 'chromium-browser'
+const WIN_CHROME = 'chrome'
+const OSX_CHROME = 'google chrome'
+const LINUX_CHROME = 'google-chrome'
+const LINUX_CHROMIUM = 'chromium-browser'
 
 function activate (context) {
   let editor = vscode.window.activeTextEditor
@@ -15,19 +15,19 @@ function activate (context) {
     let quickPick
     if (platform === 'win32') {  // Windows
       quickPick = [
-        {label: winChrome, description: 'Open in Chrome'},
+        {label: WIN_CHROME, description: 'Open in Chrome'},
         {label: 'firefox', description: 'Open in Firefox'},
         {label: 'iexplore', description: 'Open in IE'}
       ]
     } else if (platform === 'darwin') {  // OS X
       quickPick = [
-        {label: osxChrome, description: 'Open in Chrome'},
+        {label: OSX_CHROME, description: 'Open in Chrome'},
         {label: 'firefox', description: 'Open in Firefox'}
       ]
     } else {  // Linux
       quickPick = [
-        {label: linuxChromium, description: 'Open in Chromium'},
-        {label: linuxChrome, description: 'Open in Chrome'},
+        {label: LINUX_CHROMIUM, description: 'Open in Chromium'},
+        {label: LINUX_CHROME, description: 'Open in Chrome'},
         {label: 'firefox', description: 'Open in Firefox'}
       ]
     }
@@ -36,6 +36,7 @@ function activate (context) {
       placeHolder: 'Which browser you want to use?'
     }).then((val) => {
       if (val) {
+        doc.save()
         opn(doc.fileName, { app: val })
       } else {
         return
@@ -51,15 +52,16 @@ function activate (context) {
         let appName = null;
         if (result.commonName === 'chrome') {
           if (platform === 'win32') {
-            appName = winChrome
+            appName = WIN_CHROME
           } else if (platform === 'darwin') {
-            appName = osxChrome
+            appName = OSX_CHROME
           } else {
-            appName = linuxChrome
+            appName = LINUX_CHROME
           }
         } else if (result.commonName === 'chromium') {
-          appName = linuxChromium
+          appName = LINUX_CHROMIUM
         }
+        doc.save();
         opn(doc.fileName, { app: appName })
       }
       else

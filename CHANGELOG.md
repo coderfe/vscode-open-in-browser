@@ -1,3 +1,9 @@
+### 0.0.9
+
+- fix [#6](https://github.com/coderfe/vscode-open-in-browser/issues/6)
+- fix [#7](https://github.com/coderfe/vscode-open-in-browser/issues/7)
+- Change shortcut keys, open html in default browser with <kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>D</kbd>
+
 ### 0.0.8
 
 - Open html file in default browser, not default app. Thanks to [@narekmal](https://github.com/narekmal)
