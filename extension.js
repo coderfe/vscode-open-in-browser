@@ -11,16 +11,30 @@ let linuxChromium = 'chromium-browser'
 function activate (context) {
   let editor = vscode.window.activeTextEditor
   let doc = editor.document
-  const disposable = vscode.commands.registerCommand('extension.openWith', function () {
+  const disposable = vscode.commands.registerCommand('extension.openWith', () => {
     let quickPick
     if (platform === 'win32') {  // Windows
-      quickPick = [winChrome, 'firefox', 'iexplore']
+      quickPick = [
+        {label: winChrome, description: 'Open in Chrome'},
+        {label: 'firefox', description: 'Open in Firefox'},
+        {label: 'iexplore', description: 'Open in IE'}
+      ]
     } else if (platform === 'darwin') {  // OS X
-      quickPick = [osxChrome, 'firefox']
+      quickPick = [
+        {label: osxChrome, description: 'Open in Chrome'},
+        {label: 'firefox', description: 'Open in Firefox'}
+      ]
     } else {  // Linux
-      quickPick = ['chromium-browser', linuxChrome, 'firefox']
+      quickPick = [
+        {label: linuxChromium, description: 'Open in Chromium'},
+        {label: linuxChrome, description: 'Open in Chrome'},
+        {label: 'firefox', description: 'Open in Firefox'}
+      ]
     }
-    vscode.window.showQuickPick(quickPick, { placeHolder: 'Which browser?' }).then((val) => {
+    vscode.window.showQuickPick(quickPick, {
+      matchOnDescription: true,
+      placeHolder: 'Which browser you want to use?'
+    }).then((val) => {
       if (val) {
         opn(doc.fileName, { app: val })
       } else {
