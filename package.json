@@ -50,7 +50,15 @@
                 "mac": "cmd+k d",
                 "when": "editorTextFocus && editorLangId == html"
             }
-        ]
+        ],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.openWithDefault",
+					"group": "navigation@1"
+				}
+			]
+		}
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
