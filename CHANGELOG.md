@@ -1,3 +1,8 @@
+### 0.1.0
+
+- Added context menu option. Thanks to [@kevin-bruton](https://github.com/kevin-bruton)
+
+
 ### 0.0.9
 
 - fix [#6](https://github.com/coderfe/vscode-open-in-browser/issues/6)
