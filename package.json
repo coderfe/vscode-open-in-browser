@@ -1,79 +1,79 @@
 {
-  "name": "open-html-in-browser",
-  "displayName": "open-in-browser",
-  "description": "Preview HTML file in browser",
-  "version": "0.1.1",
-  "publisher": "coderfee",
-  "icon": "image/preview-html.svg",
-  "engines": {
-    "vscode": "^1.5.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "keywords": [
-    "open",
-    "browser",
-    "html",
-    "preview html"
-  ],
-  "activationEvents": [
-    "onCommand:extension.openWith",
-    "onCommand:extension.openWithDefault"
-  ],
-  "main": "./extension",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.openWith",
-        "title": "Open With"
-      },
-      {
-        "command": "extension.openWithDefault",
-        "title": "Open With Default Browser"
-      }
+    "name": "open-html-in-browser",
+    "displayName": "open-in-browser",
+    "description": "Preview HTML file in browser",
+    "version": "0.1.2",
+    "publisher": "coderfee",
+    "icon": "image/preview-html.svg",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Other"
     ],
-    "keybindings": [
-      {
-        "command": "extension.openWith",
-        "key": "ctrl+alt+o",
-        "win": "ctrl+alt+o",
-        "linux": "ctrl+alt+o",
-        "mac": "cmd+option+o",
-        "when": "editorTextFocus && editorLangId == html"
-      },
-      {
-        "command": "extension.openWithDefault",
-        "key": "ctrl+k d",
-        "win": "ctrl+k d",
-        "linux": "ctrl+k d",
-        "mac": "cmd+k d",
-        "when": "editorTextFocus && editorLangId == html"
-      }
+    "keywords": [
+        "open",
+        "browser",
+        "html",
+        "preview html"
     ],
-    "menus": {
-      "explorer/context": [
-        {
-          "command": "extension.openWithDefault",
-          "group": "navigation@1"
+    "activationEvents": [
+        "onCommand:extension.openWith",
+        "onCommand:extension.openWithDefault"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.openWith",
+                "title": "Open With"
+            },
+            {
+                "command": "extension.openWithDefault",
+                "title": "Open With Default Browser"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.openWith",
+                "key": "ctrl+alt+o",
+                "win": "ctrl+alt+o",
+                "linux": "ctrl+alt+o",
+                "mac": "cmd+option+o",
+                "when": "editorTextFocus && editorLangId == html"
+            },
+            {
+                "command": "extension.openWithDefault",
+                "key": "ctrl+k d",
+                "win": "ctrl+k d",
+                "linux": "ctrl+k d",
+                "mac": "cmd+k d",
+                "when": "editorTextFocus && editorLangId == html"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.openWithDefault",
+                    "group": "navigation@1"
+                }
+            ]
         }
-      ]
-    }
-  },
-  "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "devDependencies": {
-    "@types/mocha": "^2.2.41",
-    "@types/node": "^6.0.73",
-    "eslint": "^3.19.0",
-    "typescript": "^2.3.3",
-    "vscode": "^1.1.0"
-  },
-  "dependencies": {
-    "opn": "^5.0.0",
-    "x-default-browser": "^0.4.0"
-  },
-  "homepage": "https://github.com/coderfe/vscode-open-inbrowser"
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.41",
+        "@types/node": "^6.0.73",
+        "eslint": "^3.19.0",
+        "typescript": "^2.3.3",
+        "vscode": "^1.1.0"
+    },
+    "dependencies": {
+        "opn": "^5.0.0",
+        "x-default-browser": "^0.4.0"
+    },
+    "homepage": "https://github.com/coderfe/vscode-open-inbrowser"
 }
