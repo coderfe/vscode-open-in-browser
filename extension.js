@@ -22,7 +22,8 @@ function activate(context) {
     }).then((val) => {
       if (val) {
         doc.save();
-        opn(doc.fileName, { app: val });
+        let appArgs = getChromeArgs(val);
+        opn(doc.fileName, { app: appArgs });
       } else {
         return;
       }
@@ -66,25 +67,46 @@ function getQuickPick() {
   if (platform === 'win32') {  // Windows
     quickPick = [
       WIN_CHROME,
-      'firefox',
       'iexplore'
     ];
   } else if (platform === 'darwin') {  // OS X
     quickPick = [
-     OSX_CHROME,
-     'firefox'
+     OSX_CHROME
     ];
   } else {  // Linux
     quickPick = [
      LINUX_CHROMIUM,
-     LINUX_CHROME,
-     'firefox'
+     LINUX_CHROME
     ];
   }
+  quickPick.push('firefox');
+  quickPick.push('chrome with devtools');
   return quickPick;
 };
 
-
+function getChromeArgs(val) {
+  let args = [];
+  if (val === 'chrome with devtools') {
+    switch (platform) {
+      case 'win32':
+        args = [WIN_CHROME];
+        break;
+      case 'darwin':
+        args = [OSX_CHROME];
+        break;
+      case 'linux':
+        args = [LINUX_CHROME];
+        break;
+      default:
+        console.log(platform);
+        break;
+    }
+    args.push('--auto-open-devtools-for-tabs');
+    return args;
+  } else {
+    return val;
+  }
+}
 
 exports.activate = activate;
 
