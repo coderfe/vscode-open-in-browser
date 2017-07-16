@@ -1,7 +1,10 @@
+### 0.1.21
+- change icon
+
 ### 0.1.2
 
 - feature: open in chrome with devtools
-- fix [#8](https://github.com/coderfe/vscode-open-in-browser/issues/8), [#9](https://github.com/coderfe/vscode-open-in-browser/issues/9), [#10](https://github.com/coderfe/vscode-open-in-browser/issues/10), [#12](https://github.com/coderfe/vscode-open-in-browser/issues/12), 
+- fix [#8](https://github.com/coderfe/vscode-open-in-browser/issues/8), [#9](https://github.com/coderfe/vscode-open-in-browser/issues/9), [#10](https://github.com/coderfe/vscode-open-in-browser/issues/10), [#12](https://github.com/coderfe/vscode-open-in-browser/issues/12),
 
 
 ### 0.1.0
