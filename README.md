@@ -8,7 +8,7 @@ Preview **html** file in your browser, **firefox** & **google chrome** & **IE**.
 
 Open an html file, Windows and Linux keyboard shortcut is <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd>, for MacOS is <kbd>Cmd</kbd>+<kbd>Alt</kbd>+<kbd>O</kbd>. If you want to preview html in your default browser directly, please type <kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>D</kbd>.
 
-![vscode/open-in-browser.gif](https://cdn.githubraw.com/coderfe/vscode-open-in-browser/512bfc72/image/preview.gif)
+![vscode/open-in-browser.gif](https://cdn.githubraw.com/coderfe/vscode-open-in-browser/5e88b440/image/preview.gif)
 
 ## Release Notes
 
